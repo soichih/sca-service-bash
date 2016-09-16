@@ -10,7 +10,6 @@ then
         chmod +x $SCA_SERVICE_DIR/jq
 fi
 
-
 $SCA_SERVICE_DIR/jq -r '.bash' config.json > script.sh
 chmod +x script.sh
 
@@ -18,6 +17,7 @@ rm -f finished
 echo "running script.sh"
 (
 nohup time ./script.sh > stdout.log 2> stderr.log 
+echo "[]" > products.json
 echo $? > finished 
 ) &
 
