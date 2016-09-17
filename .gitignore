@@ -2,3 +2,4 @@ config.json
 *.log
 script.sh
 finished
+products.json
