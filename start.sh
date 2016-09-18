@@ -24,7 +24,7 @@ rm -f finished
 echo "running script.sh"
 (
 nohup time ./script.sh > stdout.log 2> stderr.log 
-echo "[]" > products.json
 echo $? > finished 
+echo "[]" > products.json
 ) &
 
