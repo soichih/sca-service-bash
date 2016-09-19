@@ -21,11 +21,11 @@ echo "writing out script stored in config.json"
 $SCA_SERVICE_DIR/jq -r '.bash' config.json > script.sh
 chmod +x script.sh
 
-echo "creating symlink for each input directories"
-for key in `jq -r '.inputs | keys[]' config.json`; do
-    src=$(jq -r ".inputs[\"$key\"]" config.json)
-    ln -s $src $key
-done
+#echo "creating symlink for each input directories"
+#for key in `jq -r '.inputs | keys[]' config.json`; do
+#    src=$(jq -r ".inputs[\"$key\"]" config.json)
+#    ln -s $src $key
+#done
 
 rm -f finished
 echo "running script.sh"
