@@ -10,12 +10,12 @@ then
         chmod +x $SCA_SERVICE_DIR/jq
 fi
 
-cwd=`$SCA_SERVICE_DIR/jq -e -r '.cwd' config.json`
-if [ $? -eq 0 ];
-then
-    echo "cd-ing to $cwd"
-    cd $cwd
-fi
+#cwd=`$SCA_SERVICE_DIR/jq -e -r '.cwd' config.json`
+#if [ $? -eq 0 ];
+#then
+#    echo "cd-ing to $cwd"
+#    cd $cwd
+#fi
 
 echo "writing out script stored in config.json"
 $SCA_SERVICE_DIR/jq -r '.bash' config.json > script.sh
